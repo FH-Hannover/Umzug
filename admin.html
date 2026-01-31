@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin – UmzugPro Anfragen</title>
+
+  <link rel="stylesheet" href="css/reset.css"/>
+  <link rel="stylesheet" href="css/variables.css"/>
+  <link rel="stylesheet" href="css/layout.css"/>
+  <link rel="stylesheet" href="css/components.css"/>
+  <link rel="stylesheet" href="css/responsive.css"/>
+</head>
+<body>
+  <header class="navbar" id="top">
+    <div class="container">
+      <div class="nav-inner">
+        <a class="logo" href="index.html#top">
+          <!-- Wenn du Logo+Text nutzt -->
+          <img src="assets/images/logo.png" alt="UmzugPro" class="logo-img" />
+        </a>
+
+        <nav id="nav">
+          <a href="index.html#angebot">Zur Webseite</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="h2">Admin – Anfragen</h2>
+      <p class="p">Hier siehst du alle gespeicherten Kostenvoranschläge (lokal im Browser).</p>
+
+      <div style="height:14px"></div>
+
+      <div class="card" style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+        <input id="search" class="input" placeholder="Suchen: Name, E-Mail, Von/Nach..." style="max-width:380px;"/>
+        <select id="statusFilter" class="input" style="max-width:200px;">
+          <option value="all">Status: Alle</option>
+          <option value="new">Neu</option>
+          <option value="done">Erledigt</option>
+        </select>
+
+        <button id="exportBtn" class="btn btn-primary" type="button">Export JSON</button>
+        <button id="clearBtn" class="btn btn-ghost" type="button">Alle löschen</button>
+
+        <span id="count" class="p" style="margin-left:auto;"></span>
+      </div>
+
+      <div style="height:16px"></div>
+
+      <div class="card" style="overflow:auto;">
+        <table class="admin-table" style="width:100%; border-collapse:collapse;">
+          <thead>
+            <tr style="text-align:left; border-bottom:1px solid var(--border);">
+              <th style="padding:12px 10px;">Datum</th>
+              <th style="padding:12px 10px;">Kunde</th>
+              <th style="padding:12px 10px;">Von → Nach</th>
+              <th style="padding:12px 10px;">Details</th>
+              <th style="padding:12px 10px;">Status</th>
+              <th style="padding:12px 10px;">Aktion</th>
+            </tr>
+          </thead>
+          <tbody id="rows"></tbody>
+        </table>
+
+        <p id="empty" class="p" style="padding:14px; display:none;">
+          Noch keine Anfragen gespeichert.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>

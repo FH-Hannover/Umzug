@@ -1,0 +1,268 @@
+/* Navbar */
+.navbar{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255,255,255,0.88);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Wichtig: Positionierung für Mobile-Dropdown */
+.nav-inner{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 72px;     /* ruhige, professionelle Header-Höhe */
+}
+
+/* Logo */
+.logo{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+  text-decoration: none;
+}
+
+.logo-img{
+  height: 48px;
+  width: auto;
+  display: block;
+}
+
+/* Falls du später doch Text nutzen willst (aktuell im HTML nicht vorhanden) */
+.logo-text{
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-size: 18px;
+  color: var(--text);
+}
+.logo span{ color: var(--primary); }
+
+/* Navigation (Desktop) */
+nav{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+nav a{
+  padding: 10px 12px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+nav a:hover{
+  background: var(--surface);
+  color: var(--text);
+}
+
+/* Burger */
+.burger{
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+/* Buttons (Basis) */
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  padding: 12px 16px;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+
+.btn-primary{
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+}
+.btn-primary:hover{
+  filter: brightness(0.95);
+  text-decoration: none;
+}
+
+.btn-ghost{
+  background: rgba(29, 78, 216, 0.06);
+  border: 1px solid rgba(29, 78, 216, 0.18);
+  color: var(--primary);
+}
+.btn-ghost:hover{
+  background: rgba(29, 78, 216, 0.1);
+  text-decoration: none;
+}
+
+/* Badges */
+.badge{
+  border-radius: var(--radius);
+  padding: var(--space-4);
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 0 rgba(2, 6, 23, 0.03);
+  background: var(--bg);
+}
+.badge.is-blue{ background: rgba(29, 78, 216, 0.06); border-color: rgba(29, 78, 216, 0.18); }
+.badge.is-cyan{ background: rgba(6, 182, 212, 0.08); border-color: rgba(6, 182, 212, 0.2); }
+.badge.is-warm{ background: rgba(249, 115, 22, 0.10); border-color: rgba(249, 115, 22, 0.22); }
+
+/* Card accent line */
+.card{
+  position: relative;
+}
+.card::before{
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  border-radius: var(--radius) var(--radius) 0 0;
+  background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+  opacity: 0.9;
+}
+
+/* Form + Result */
+.form{
+  display: grid;
+  gap: 16px;
+}
+
+.form-row{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form button{
+  width: 100%;
+}
+
+.result{
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(22, 163, 74, 0.1);
+  border: 1px solid rgba(22, 163, 74, 0.3);
+  color: #065f46;
+  font-size: 14px;
+}
+
+/* === Neue UX Klassen für index.html (Labels/Fields/Options) === */
+
+/* Feld mit Label + Input */
+.field{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field label{
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* Hinweis unter Button */
+.form-note{
+  font-size: 13px;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 6px;
+}
+
+/* Optionen / Zusatzleistungen */
+.options{
+  display: grid;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: linear-gradient(
+    180deg,
+    rgba(29,78,216,0.03),
+    rgba(6,182,212,0.03)
+  );
+}
+
+/* Einzelne Checkbox-Zeile */
+.check{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--text);
+  cursor: pointer;
+  line-height: 1.4;
+}
+
+.check input{
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+
+.check:hover{
+  color: var(--primary);
+}
+
+/* Mobile */
+@media (max-width: 768px){
+  .logo-img{
+    height: 40px;
+  }
+  .logo-text{
+    font-size: 16px;
+  }
+
+  /* Burger sichtbar */
+  .burger{
+    display: inline-flex;
+  }
+
+  /* Mobile Dropdown Navigation */
+  nav{
+    display: none;
+    position: absolute;
+    right: var(--space-5);
+    top: 72px;
+    width: min(320px, calc(100vw - 2 * var(--space-5)));
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow);
+  }
+
+  nav.open{
+    display: flex;
+  }
+
+  nav a{
+    padding: 12px 12px;
+    border-radius: 12px;
+  }
+
+  .form-row{
+    grid-template-columns: 1fr;
+  }
+
+  .options{
+    padding: 12px 14px;
+  }
+}

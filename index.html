@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UmzugPro – Umzugsunternehmen</title>
+  <link rel="stylesheet" href="css/reset.css"/>
+  <link rel="stylesheet" href="css/variables.css"/>
+  <link rel="stylesheet" href="css/layout.css"/>
+  <link rel="stylesheet" href="css/components.css"/>
+  <link rel="stylesheet" href="css/responsive.css"/>
+</head>
+
+<body>
+  <header class="navbar" id="top">
+    <div class="container">
+      <div class="nav-inner">
+        <a class="logo" href="#top">
+          <img
+            src="assets/images/logo.png"
+            alt="UmzugPro Umzugsunternehmen – Stressfrei umziehen"
+            class="logo-img"
+          />
+        </a>
+        <button class="burger" id="burger" aria-label="Menü öffnen">☰</button>
+
+        <nav id="nav">
+          <a href="#leistungen">Leistungen</a>
+          <a href="#ablauf">Ablauf</a>
+          <a href="#angebot">Angebot</a>
+          <a href="#kontakt">Kontakt</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <p class="p">
+            <strong style="color:var(--primary)">Umzugsunternehmen</strong> • Privat &amp; Gewerbe
+          </p>
+          <h1>Stressfrei umziehen – zuverlässig, pünktlich, sauber.</h1>
+          <p class="hero-lead">
+            Fordere in wenigen Minuten einen unverbindlichen Kostenvoranschlag an.
+            Wir melden uns zeitnah und transparent.
+          </p>
+
+          <div style="margin-top:18px; display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn btn-primary" href="#angebot">Kostenvoranschlag anfragen</a>
+            <a class="btn btn-ghost" href="#kontakt">Kontakt</a>
+          </div>
+
+          <div class="badges">
+            <div class="badge is-blue">
+              <strong>Versichert</strong>
+              <span>Transport &amp; Haftung</span>
+            </div>
+            <div class="badge is-cyan">
+              <strong>Transparent</strong>
+              <span>Klare Preise</span>
+            </div>
+            <div class="badge is-warm">
+              <strong>Schnell</strong>
+              <span>Flexible Termine</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rechte Spalte absichtlich entfernt (mehr Fokus im Hero) -->
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="leistungen">
+    <div class="container">
+      <h2 class="h2">Leistungen</h2>
+
+      <div class="section-media">
+        <img
+          src="assets/images/boxes.jpg"
+          alt="Umzugskartons – sicher verpackt und bereit für den Umzug"
+          class="section-image"
+          loading="lazy"
+        />
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>Privatumzug</h3>
+          <p>Wohnung, Haus, Seniorenumzug – inkl. Schutzmaterial.</p>
+        </div>
+        <div class="card">
+          <h3>Firmenumzug</h3>
+          <p>Büros, Praxen, Lager – mit Plan zur Minimierung von Ausfallzeiten.</p>
+        </div>
+        <div class="card">
+          <h3>Einpackservice</h3>
+          <p>Auf Wunsch: Verpacken, Demontage/Montage, Entsorgung.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="ablauf">
+    <div class="container">
+      <h2 class="h2">Ablauf</h2>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>1. Anfrage</h3>
+          <p>Formular ausfüllen – dauert nur wenige Minuten.</p>
+        </div>
+        <div class="card">
+          <h3>2. Rückfragen</h3>
+          <p>Wir klären Details und stimmen den Termin ab.</p>
+        </div>
+        <div class="card">
+          <h3>3. Angebot</h3>
+          <p>Du erhältst deinen unverbindlichen Kostenvoranschlag.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="angebot">
+    <div class="container">
+      <h2 class="h2">Unverbindlicher Kostenvoranschlag</h2>
+
+      <div class="card">
+        <form id="quoteForm" class="form">
+          <!-- Kontakt -->
+          <div class="form-row">
+            <div class="field">
+              <label for="fullName">Name *</label>
+              <input id="fullName" class="input" name="fullName" autocomplete="name" required />
+            </div>
+
+            <div class="field">
+              <label for="email">E-Mail *</label>
+              <input id="email" class="input" type="email" name="email" autocomplete="email" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="phone">Telefon (optional)</label>
+              <input id="phone" class="input" name="phone" autocomplete="tel" />
+            </div>
+
+            <div class="field">
+              <label for="moveDate">Umzugsdatum (optional)</label>
+              <input id="moveDate" class="input" type="date" name="moveDate" />
+            </div>
+          </div>
+
+          <!-- Adressen -->
+          <div class="form-row">
+            <div class="field">
+              <label for="fromAddress">Von Adresse *</label>
+              <input id="fromAddress" class="input" name="fromAddress" autocomplete="street-address" required />
+            </div>
+
+            <div class="field">
+              <label for="toAddress">Nach Adresse *</label>
+              <input id="toAddress" class="input" name="toAddress" autocomplete="street-address" required />
+            </div>
+          </div>
+
+          <!-- Eckdaten -->
+          <div class="form-row">
+            <div class="field">
+              <label for="rooms">Zimmer *</label>
+              <input id="rooms" class="input" type="number" name="rooms" min="1" value="2" required />
+            </div>
+
+            <div class="field">
+              <label for="livingAreaM2">Wohnfläche (m²) optional</label>
+              <input id="livingAreaM2" class="input" type="number" name="livingAreaM2" min="0" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="floorFrom">Stockwerk (von) optional</label>
+              <input id="floorFrom" class="input" type="number" name="floorFrom" />
+            </div>
+
+            <div class="field">
+              <label for="floorTo">Stockwerk (nach) optional</label>
+              <input id="floorTo" class="input" type="number" name="floorTo" />
+            </div>
+          </div>
+
+          <!-- Optionen -->
+          <div class="options">
+            <label class="check">
+              <input type="checkbox" name="elevatorFrom" />
+              <span>Lift vorhanden (von)</span>
+            </label>
+
+            <label class="check">
+              <input type="checkbox" name="elevatorTo" />
+              <span>Lift vorhanden (nach)</span>
+            </label>
+
+            <label class="check">
+              <input type="checkbox" name="packingHelp" />
+              <span>Einpackservice gewünscht</span>
+            </label>
+          </div>
+
+          <!-- Notizen -->
+          <div class="field">
+            <label for="notes">Notizen (optional)</label>
+            <textarea
+              id="notes"
+              class="input"
+              name="notes"
+              placeholder="z. B. schwere Möbel, Klavier, Halteverbot, etc."
+              style="min-height:110px;"></textarea>
+          </div>
+
+          <button class="btn btn-primary" type="submit">Kostenloses Angebot anfordern</button>
+
+          <p class="form-note">🔒 Unverbindlich &amp; DSGVO-konform – deine Daten werden nicht weitergegeben.</p>
+
+          <p id="result" class="result"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="kontakt">
+    <div class="container">
+      <h2 class="h2">Kontakt</h2>
+      <p class="p">
+        Hier tragen wir später Telefonnummer, E-Mail, Adresse und Öffnungszeiten ein.
+      </p>
+      <div style="height:10px"></div>
+      <div class="card">
+        <p><strong>Telefon:</strong> +49 ...</p>
+        <p><strong>E-Mail:</strong> info@...</p>
+        <p><strong>Standort:</strong> ...</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      © <span id="year"></span> UmzugPro • Impressum/Datenschutz folgt
+    </div>
+  </footer>
+
+  <script src="js/menu.js"></script>
+  <script src="js/form.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

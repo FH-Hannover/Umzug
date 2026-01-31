@@ -1,0 +1,199 @@
+html { scroll-behavior: smooth; }
+
+body{
+  font-family: var(--font);
+  font-size: var(--fs-base);
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.55;
+}
+
+a{ color: inherit; text-decoration: none; }
+a:hover{ text-decoration: underline; }
+
+.container{
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--space-5);
+}
+
+/* Sections */
+.section{
+  padding: var(--space-8) 0;
+  border-top: 1px solid var(--border);
+}
+
+.section:first-of-type{
+  border-top: none;
+}
+
+.section.alt{
+  background: var(--surface-2);
+}
+
+.h2{
+  font-size: 28px;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-4);
+}
+
+.p{
+  color: var(--muted);
+  max-width: 70ch;
+}
+
+/* Hero */
+/* Hero (mit Hintergrundbild) */
+.hero{
+  position: relative;
+  background:
+    /* Dunkles Overlay für Lesbarkeit */
+    linear-gradient(rgba(15, 23, 42, 0.70), rgba(15, 23, 42, 0.70)),
+    /* Dein Bild */
+    url("../assets/images/hero-truck.jpg") center 35% / cover no-repeat;
+  border-bottom: 1px solid var(--border);
+  padding: var(--space-8) 0;
+}
+
+
+
+.hero-grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-7);
+  align-items: center;
+}
+
+.hero h1{
+  font-size: 44px;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  color: #f8fafc;
+}
+
+.hero .p{
+  color: rgba(248, 250, 252, 0.9);
+}
+
+.hero-lead{
+  margin-top: var(--space-4);
+  color: rgba(248, 250, 252, 0.85);
+  font-size: 18px;
+}
+
+.hero .btn-primary{
+  box-shadow: 0 10px 30px rgba(29, 78, 216, 0.35);
+}
+
+.hero .btn-ghost{
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.22);
+  color: rgba(248,250,252,0.95);
+}
+.hero .btn-ghost:hover{
+  background: rgba(255,255,255,0.18);
+  text-decoration: none;
+}
+
+
+/* Badges im Hero: Glas-Effekt */
+.hero .badge{
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+}
+
+.hero .badge strong{
+  color: rgba(248,250,252,0.95);
+}
+
+.hero .badge span{
+  color: rgba(248,250,252,0.80);
+}
+
+.navbar{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Wenn du willst, dass die Navbar über dem Hero noch dezenter ist */
+.hero + .section{ border-top: none; }
+
+
+.badges{
+  margin-top: var(--space-6);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+}
+
+.badge{
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+  box-shadow: 0 1px 0 rgba(2, 6, 23, 0.03);
+}
+
+.badge strong{
+  display: block;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+.badge span{
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* Cards */
+.card{
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: var(--space-6);
+}
+
+.card h3{
+  font-size: 16px;
+  margin-bottom: var(--space-2);
+}
+.card p{
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Simple grid */
+.grid-3{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+/* Footer */
+.footer{
+  border-top: 1px solid var(--border);
+  padding: var(--space-6) 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+
+/* Section Image (z.B. Leistungen) */
+.section-media{
+  margin: var(--space-5) 0 var(--space-6);
+}
+
+.section-image{
+  width: 100%;
+  max-height: 360px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
