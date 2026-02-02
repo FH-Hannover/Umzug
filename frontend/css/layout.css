@@ -14,12 +14,13 @@ a:hover{ text-decoration: underline; }
 .container{
   max-width: var(--container);
   margin: 0 auto;
-  padding: 0 var(--space-5);
+  padding: 0 clamp(16px, 3vw, 28px);
 }
+
 
 /* Sections */
 .section{
-  padding: var(--space-8) 0;
+  padding: clamp(48px, 7vw, 88px) 0;
   border-top: 1px solid var(--border);
 }
 
@@ -30,6 +31,7 @@ a:hover{ text-decoration: underline; }
 .section.alt{
   background: var(--surface-2);
 }
+
 
 .h2{
   font-size: 28px;
@@ -52,7 +54,7 @@ a:hover{ text-decoration: underline; }
     /* Dein Bild */
     url("../assets/images/hero-truck.jpg") center 35% / cover no-repeat;
   border-bottom: 1px solid var(--border);
-  padding: var(--space-8) 0;
+  padding: clamp(56px, 8vw, 92px) 0;
 }
 
 
@@ -60,7 +62,7 @@ a:hover{ text-decoration: underline; }
 .hero-grid{
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-7);
+  gap: clamp(18px, 4vw, 36px);
   align-items: center;
 }
 
@@ -156,11 +158,13 @@ a:hover{ text-decoration: underline; }
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   padding: var(--space-6);
+  height: 100%;
 }
 
 .card h3{
   font-size: 16px;
   margin-bottom: var(--space-2);
+  line-height: 1.25;
 }
 .card p{
   color: var(--muted);
@@ -170,9 +174,12 @@ a:hover{ text-decoration: underline; }
 /* Simple grid */
 .grid-3{
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-4);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 20px);
 }
+
+
+
 
 /* Footer */
 .footer{
@@ -196,4 +203,22 @@ a:hover{ text-decoration: underline; }
   box-shadow: var(--shadow);
   border: 1px solid var(--border);
 }
+
+.section-head{
+  display: grid;
+  gap: 10px;
+  margin-bottom: clamp(18px, 2.4vw, 28px);
+}
+
+.section-head .h2{
+  margin: 0;
+}
+
+.section-sub{
+  margin: 0;
+  color: var(--muted);
+  max-width: 75ch;
+  font-size: 16px;
+}
+
 
