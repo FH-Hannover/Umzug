@@ -79,14 +79,25 @@
         <h2 class="h2">Leistungen</h2>
         <p class="section-sub">Privat- und Firmenumzüge – zuverlässig geplant und sauber umgesetzt.</p>
       </div>
-      <div class="section-media">
-        <img
-          src="assets/images/boxes.jpg"
-          alt="Umzugskartons – sicher verpackt und bereit für den Umzug"
-          class="section-image"
-          loading="lazy"
-        />
+      <div class="services-slider" aria-label="Bildergalerie UmzugPro">
+      <div class="slider-track" id="servicesTrack">
+        <div class="slide">
+          <img src="assets/images/umzugswagen.png" alt="Umzugswagen mit Kartons" loading="lazy">
+        </div>
+        <div class="slide">
+          <img src="assets/images/umzugswagen_1.png" alt="Beladener LKW mit Möbeln" loading="lazy">
+        </div>
+        <div class="slide">
+          <img src="assets/images/umzugswagen_2.png" alt="Umzugstransporter vor dem Haus" loading="lazy">
+        </div>
       </div>
+
+  <button class="slider-btn prev" id="servicesPrev" aria-label="Vorheriges Bild">‹</button>
+  <button class="slider-btn next" id="servicesNext" aria-label="Nächstes Bild">›</button>
+
+  <div class="slider-dots" id="servicesDots" aria-label="Slider Navigation"></div>
+</div>
+
 
       <div class="grid-3">
         <div class="card">
@@ -297,8 +308,10 @@
 
   <script src="js/menu.js"></script>
   <script src="js/form.js"></script>
+  <script src="js/slider.js"></script>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+  
 </body>
 </html>
