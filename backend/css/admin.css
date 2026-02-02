@@ -1,5 +1,7 @@
 /* backend/admin/css/admin.css */
 
+
+
 /* -------- Base -------- */
 :root{
   --bg: #f6f8fc;
@@ -199,3 +201,107 @@ small{ color: var(--muted); }
   body{ padding: 16px; }
   table{ display: block; overflow-x: auto; }
 }
+/* =========================
+   Order Calculation Box
+========================= */
+#orderCalc{
+  background: linear-gradient(
+    180deg,
+    #ffffff,
+    #f8fafc
+  );
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(2,6,23,0.12);
+  padding: 24px;
+  animation: slideUp 0.25s ease;
+}
+
+@keyframes slideUp{
+  from{
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+#orderCalc h3{
+  margin: 0 0 6px;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+}
+
+#orderCalc .p{
+  margin-bottom: 18px;
+}
+#orderCalc .grid-3{
+  background: rgba(29,78,216,0.04);
+  border: 1px solid rgba(29,78,216,0.15);
+  border-radius: 14px;
+  padding: 16px;
+}
+
+#orderCalc .grid-3 strong{
+  font-size: 13px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+#orderCalc .grid-3 span,
+#orderCalc .grid-3 small{
+  display: block;
+  margin-top: 4px;
+}
+#orderCalc .field label{
+  font-weight: 600;
+  font-size: 13px;
+}
+
+#orderCalc input[type="number"]{
+  font-size: 15px;
+  font-weight: 600;
+}
+
+#orderCalc input[type="number"]:focus{
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(6,182,212,0.18);
+}
+#orderCalc .result{
+  background: linear-gradient(
+    135deg,
+    rgba(29,78,216,0.08),
+    rgba(124,58,237,0.06)
+  );
+  border: 1px solid rgba(29,78,216,0.25);
+  border-radius: 14px;
+  padding: 16px;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#orderCalc .result span{
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--primary);
+}#orderCalc .btn{
+  height: 44px;
+  border-radius: 14px;
+}
+
+#orderCalc .btn-primary{
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary)
+  );
+  border: none;
+}
+
+#orderCalc .btn-ghost{
+  background: transparent;
+}
+

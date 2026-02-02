@@ -3,71 +3,195 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Admin – UmzugPro Anfragen</title>
+  <title>Admin – UmzugPro</title>
   <link rel="stylesheet" href="css/admin.css"/>
-
 </head>
 <body>
-  <header class="navbar" id="top">
-    <div class="container">
-      <div class="nav-inner">
-        <a class="logo" href="index.html#top">
-          <!-- Wenn du Logo+Text nutzt -->
-          <img src="assets/images/logo.png" alt="UmzugPro" class="logo-img" />
-        </a>
 
-        <nav id="nav">
-          <a href="index.html#angebot">Zur Webseite</a>
-        </nav>
+<header class="navbar" id="top">
+  <div class="container">
+    <div class="nav-inner">
+      <a class="logo" href="#top">
+        <img
+          src="assets/images/logo.png"
+          alt="UmzugPro"
+          class="logo-img"
+        />
+      </a>
+      <nav>
+        <a href="index.html#angebot">Zur Webseite</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+
+    <h2 class="h2">Admin – Verwaltung</h2>
+    <p class="p">Anfragen und Aufträge aus dem Frontend (lokal gespeichert).</p>
+
+    <!-- Admin Tabs -->
+    <div
+      id="adminTabs"
+      style="display:flex; gap:10px; margin:16px 0;"
+    >
+      <button class="btn btn-primary" data-view="requests">
+        Anfragen
+      </button>
+      <button class="btn btn-ghost" data-view="orders">
+        Aufträge
+      </button>
+    </div>
+
+    <!-- Controls -->
+    <div
+      class="card"
+      style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;"
+    >
+      <input
+        id="search"
+        class="input"
+        placeholder="Suchen: Name, E-Mail, Adresse, ID…"
+        style="max-width:380px;"
+      />
+
+      <button id="exportBtn" class="btn btn-primary" type="button">
+        Export JSON
+      </button>
+
+      <button id="clearBtn" class="btn btn-ghost" type="button">
+        Alle löschen
+      </button>
+
+      <span id="count" class="p" style="margin-left:auto;"></span>
+    </div>
+
+    <!-- Monats Tabs -->
+    <div
+      id="monthTabs"
+      style="display:flex; gap:8px; flex-wrap:wrap; margin:14px 0;"
+    ></div>
+
+    <!-- Tabelle -->
+    <div class="card" style="overflow:auto;">
+      <table style="width:100%; border-collapse:collapse;">
+        <thead>
+          <tr>
+            <th>Datum</th>
+            <th>Kunde</th>
+            <th>Von → Nach</th>
+            <th>Details</th>
+            <th>Aktion</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+
+      <p
+        id="empty"
+        class="p"
+        style="padding:14px; display:none;"
+      >
+        Noch keine Einträge vorhanden.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<script src="js/admin.js"></script>
+<!-- =======================
+     Auftrags-Berechnung
+======================= -->
+<div
+  id="orderCalc"
+  class="card"
+  style="display:none; margin:24px auto; max-width:900px;"
+>
+  <h3>Auftrag – Berechnung</h3>
+  <p class="p">Kundendaten (aus Anfrage) & Preisberechnung.</p>
+
+  <!-- Kundendaten -->
+  <div class="grid-3" style="margin-bottom:16px;">
+    <div>
+      <strong>Kunde</strong><br>
+      <span id="c_name"></span><br>
+      <small id="c_email"></small>
+    </div>
+    <div>
+      <strong>Route</strong><br>
+      <span id="c_route"></span>
+    </div>
+    <div>
+      <strong>Umzug</strong><br>
+      <span id="c_meta"></span>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Preise -->
+  <div class="form">
+    <div class="form-row">
+      <div class="field">
+        <label>Grundpreis (€)</label>
+        <input type="number" id="p_base" class="input" min="0">
+      </div>
+      <div class="field">
+        <label>Preis pro Zimmer (€)</label>
+        <input type="number" id="p_room" class="input" min="0">
       </div>
     </div>
-  </header>
 
-  <section class="section">
-    <div class="container">
-      <h2 class="h2">Admin – Anfragen</h2>
-      <p class="p">Hier siehst du alle gespeicherten Kostenvoranschläge (lokal im Browser).</p>
-
-      <div style="height:14px"></div>
-
-      <div class="card" style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
-        <input id="search" class="input" placeholder="Suchen: Name, E-Mail, Von/Nach..." style="max-width:380px;"/>
-        <select id="statusFilter" class="input" style="max-width:200px;">
-          <option value="all">Status: Alle</option>
-          <option value="new">Neu</option>
-          <option value="done">Erledigt</option>
-        </select>
-
-        <button id="exportBtn" class="btn btn-primary" type="button">Export JSON</button>
-        <button id="clearBtn" class="btn btn-ghost" type="button">Alle löschen</button>
-
-        <span id="count" class="p" style="margin-left:auto;"></span>
+    <div class="form-row">
+      <div class="field">
+        <label>Stockwerke / Aufwand (€)</label>
+        <input type="number" id="p_floor" class="input" min="0">
       </div>
-
-      <div style="height:16px"></div>
-
-      <div class="card" style="overflow:auto;">
-        <table class="admin-table" style="width:100%; border-collapse:collapse;">
-          <thead>
-            <tr style="text-align:left; border-bottom:1px solid var(--border);">
-              <th style="padding:12px 10px;">Datum</th>
-              <th style="padding:12px 10px;">Kunde</th>
-              <th style="padding:12px 10px;">Von → Nach</th>
-              <th style="padding:12px 10px;">Details</th>
-              <th style="padding:12px 10px;">Status</th>
-              <th style="padding:12px 10px;">Aktion</th>
-            </tr>
-          </thead>
-          <tbody id="rows"></tbody>
-        </table>
-
-        <p id="empty" class="p" style="padding:14px; display:none;">
-          Noch keine Anfragen gespeichert.
-        </p>
+      <div class="field">
+        <label>Einpackservice (€)</label>
+        <input type="number" id="p_pack" class="input" min="0">
       </div>
     </div>
-  </section>
 
-  <script src="js/admin.js"></script>
+    <div class="form-row">
+      <div class="field">
+        <label>Fahrt / Entfernung (€)</label>
+        <input type="number" id="p_distance" class="input" min="0">
+      </div>
+      <div class="field">
+        <label>Sonstiges (€)</label>
+        <input type="number" id="p_extra" class="input" min="0">
+      </div>
+    </div>
+  </div>
+
+  <div class="result" style="margin-top:14px;">
+    <strong>Gesamtpreis:</strong>
+    <span id="totalPrice">0 €</span>
+  </div>
+
+  <div style="display:flex; gap:10px; margin-top:16px;">
+    <button
+  class="btn btn-primary"
+  id="saveOrderCalc"
+  type="button"
+>
+  Berechnung speichern
+</button>
+
+<button
+  class="btn btn-ghost"
+  id="closeCalc"
+  type="button"
+>
+  Schließen
+</button>
+
+  </div>
+</div>
+
 </body>
 </html>
