@@ -411,6 +411,41 @@ nav a:hover{
   background: rgba(255,255,255,0.95);
 }
 
+/* === Variante 2: Farbverlauf-Hintergrund (ohne Bild) === */
+/* === Dunkler, moderner Farbverlauf (UmzugPro) === */
+/* === Balanced Gradient (edel, nicht zu dunkel) === */
+.section-gradient{
+  background:
+    radial-gradient(800px 480px at 15% 20%, rgba(29,78,216,0.22), transparent 60%),
+    radial-gradient(700px 460px at 85% 25%, rgba(249,115,22,0.18), transparent 60%),
+    radial-gradient(800px 520px at 50% 90%, rgba(6,182,212,0.18), transparent 60%),
+    linear-gradient(
+      180deg,
+      #1e293b 0%,   /* slate-800 */
+      #0f172a 100%  /* slate-900 */
+    );
+}
+
+.section-gradient .h2{
+  color: #f8fafc;
+}
+
+.section-gradient .p{
+  color: rgba(248,250,252,0.78);
+}
+
+.section-gradient .card{
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(6px);
+}
+
+.section-gradient .services-slider{
+  box-shadow: 0 25px 60px rgba(2,6,23,0.35);
+}
+
+
+
+
 /* Mobile */
 @media (max-width: 768px){
   .slide{
