@@ -443,6 +443,31 @@ nav a:hover{
   box-shadow: 0 25px 60px rgba(2,6,23,0.35);
 }
 
+/* === Ablauf: hell, aber nicht zu hell (balanced) === */
+.section-light{
+  background:
+    radial-gradient(700px 460px at 15% 20%, rgba(29,78,216,0.12), transparent 60%),
+    radial-gradient(700px 460px at 85% 80%, rgba(249,115,22,0.10), transparent 60%),
+    linear-gradient(
+      180deg,
+      #f1f5f9 0%,   /* slate-100 */
+      #e2e8f0 100%  /* slate-200 */
+    );
+}
+
+.section-light .h2{
+  color: #0f172a;
+}
+
+.section-light .p{
+  color: rgba(15,23,42,0.75);
+}
+
+.section-light .card{
+  background: rgba(255,255,255,0.96);
+  border: 1px solid rgba(2,6,23,0.08);
+  box-shadow: 0 14px 35px rgba(2,6,23,0.08);
+}
 
 
 
