@@ -21,8 +21,9 @@ a:hover{ text-decoration: underline; }
 /* Sections */
 .section{
   padding: clamp(48px, 7vw, 88px) 0;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid rgba(2,6,23,0.06);
 }
+
 
 .section:first-of-type{
   border-top: none;

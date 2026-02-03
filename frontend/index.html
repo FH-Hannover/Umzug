@@ -22,6 +22,7 @@
             class="logo-img"
           />
         </a>
+
         <button class="burger" id="burger" aria-label="Menü öffnen">☰</button>
 
         <nav id="nav">
@@ -73,31 +74,33 @@
     </div>
   </section>
 
-  <section class="section section-gradient" id="leistungen">
+  <!-- LEISTUNGEN -->
+  <section class="section section-theme-dark" id="leistungen">
     <div class="container">
       <div class="section-head">
         <h2 class="h2">Leistungen</h2>
         <p class="section-sub">Privat- und Firmenumzüge – zuverlässig geplant und sauber umgesetzt.</p>
       </div>
+
+      <!-- Slider -->
       <div class="services-slider" aria-label="Bildergalerie UmzugPro">
-      <div class="slider-track" id="servicesTrack">
-        <div class="slide">
-          <img src="assets/images/umzugswagen.png" alt="Umzugswagen mit Kartons" loading="lazy">
+        <div class="slider-track" id="servicesTrack">
+          <div class="slide">
+            <img src="assets/images/umzugswagen.png" alt="Umzugswagen mit Kartons" loading="lazy">
+          </div>
+          <div class="slide">
+            <img src="assets/images/umzugswagen_1.png" alt="Beladener LKW mit Möbeln" loading="lazy">
+          </div>
+          <div class="slide">
+            <img src="assets/images/umzugswagen_2.png" alt="Umzugstransporter vor dem Haus" loading="lazy">
+          </div>
         </div>
-        <div class="slide">
-          <img src="assets/images/umzugswagen_1.png" alt="Beladener LKW mit Möbeln" loading="lazy">
-        </div>
-        <div class="slide">
-          <img src="assets/images/umzugswagen_2.png" alt="Umzugstransporter vor dem Haus" loading="lazy">
-        </div>
+
+        <button class="slider-btn prev" id="servicesPrev" aria-label="Vorheriges Bild">‹</button>
+        <button class="slider-btn next" id="servicesNext" aria-label="Nächstes Bild">›</button>
+
+        <div class="slider-dots" id="servicesDots" aria-label="Slider Navigation"></div>
       </div>
-
-  <button class="slider-btn prev" id="servicesPrev" aria-label="Vorheriges Bild">‹</button>
-  <button class="slider-btn next" id="servicesNext" aria-label="Nächstes Bild">›</button>
-
-  <div class="slider-dots" id="servicesDots" aria-label="Slider Navigation"></div>
-</div>
-
 
       <div class="grid-3">
         <div class="card">
@@ -116,13 +119,13 @@
     </div>
   </section>
 
-  <section class="section section-light" id="ablauf">
+  <!-- ABLAUF -->
+  <section class="section section-theme-mid" id="ablauf">
     <div class="container">
       <div class="section-head">
         <h2 class="h2">Ablauf</h2>
         <p class="section-sub">In 3 Schritten zum transparenten, unverbindlichen Angebot.</p>
       </div>
-
 
       <div class="grid-3">
         <div class="card">
@@ -141,12 +144,14 @@
     </div>
   </section>
 
-  <section class="section" id="angebot">
+  <!-- ANGEBOT -->
+  <section class="section section-theme-soft" id="angebot">
     <div class="container">
       <div class="section-head">
         <h2 class="h2">Unverbindlicher Kostenvoranschlag</h2>
         <p class="section-sub">Je genauer die Angaben, desto genauer der Preis. Dauer: ca. 2–3 Minuten.</p>
       </div>
+
       <div class="card">
         <form id="quoteForm" class="form">
           <!-- Kontakt -->
@@ -251,54 +256,54 @@
     </div>
   </section>
 
-  <section class="section contact" id="kontakt">
-  <div class="container">
+  <!-- KONTAKT -->
+  <!-- Wichtig: contact Klasse hinzugefügt, damit deine Kontakt-CSS greift -->
+  <section class="section section-theme-soft contact" id="kontakt">
+    <div class="container">
+      <div class="contact-head">
+        <p class="contact-eyebrow">LEGEN SIE IHREN AUFTRAG IN UNSERE FACHLICHEN HÄNDE</p>
+        <h2 class="contact-title">
+          <span>KONTAKTIEREN</span> SIE UNS:
+        </h2>
+        <p class="p">Schnell erreichbar per E-Mail, Telefon oder WhatsApp.</p>
+      </div>
 
-    <div class="contact-head">
-      <p class="contact-eyebrow">LEGEN SIE IHREN AUFTRAG IN UNSERE FACHLICHEN HÄNDE</p>
-      <h2 class="contact-title">
-        <span>KONTAKTIEREN</span> SIE UNS:
-      </h2>
-      <p class="p">Schnell erreichbar per E-Mail, Telefon oder WhatsApp.</p>
+      <div class="contact-grid">
+        <!-- E-Mail -->
+        <a class="contact-card" href="mailto:info@umzugpro.de">
+          <div class="contact-icon">
+            <img src="assets/icons/email.png" alt="E-Mail Icon" />
+          </div>
+          <div class="contact-card-body">
+            <div class="contact-label">E-Mail</div>
+            <div class="contact-value">info@umzugpro.de</div>
+          </div>
+        </a>
+
+        <!-- Telefon -->
+        <a class="contact-card" href="tel:+4971199521670">
+          <div class="contact-icon">
+            <img src="assets/icons/phone.png" alt="Telefon Icon" />
+          </div>
+          <div class="contact-card-body">
+            <div class="contact-label">Telefon</div>
+            <div class="contact-value">0711 995 216 70</div>
+          </div>
+        </a>
+
+        <!-- WhatsApp -->
+        <a class="contact-card" href="https://wa.me/4917630609028" target="_blank" rel="noopener noreferrer">
+          <div class="contact-icon">
+            <img src="assets/icons/whatsapp.png" alt="WhatsApp Icon" />
+          </div>
+          <div class="contact-card-body">
+            <div class="contact-label">WhatsApp</div>
+            <div class="contact-value">0176 30 60 90 28</div>
+          </div>
+        </a>
+      </div>
     </div>
-
-    <div class="contact-grid">
-      <!-- E-Mail -->
-      <a class="contact-card" href="mailto:info@umzugpro.de">
-        <div class="contact-icon">
-          <img src="assets/icons/email.png" alt="E-Mail Icon" />
-        </div>
-        <div class="contact-card-body">
-          <div class="contact-label">E-Mail</div>
-          <div class="contact-value">info@umzugpro.de</div>
-        </div>
-      </a>
-
-      <!-- Telefon -->
-      <a class="contact-card" href="tel:+4971199521670">
-        <div class="contact-icon">
-          <img src="assets/icons/phone.png" alt="Telefon Icon" />
-        </div>
-        <div class="contact-card-body">
-          <div class="contact-label">Telefon</div>
-          <div class="contact-value">0711 995 216 70</div>
-        </div>
-      </a>
-
-      <!-- WhatsApp -->
-      <a class="contact-card" href="https://wa.me/4917630609028" target="_blank" rel="noopener">
-        <div class="contact-icon">
-          <img src="assets/icons/whatsapp.png" alt="WhatsApp Icon" />
-        </div>
-        <div class="contact-card-body">
-          <div class="contact-label">WhatsApp</div>
-          <div class="contact-value">0176 30 60 90 28</div>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
-
+  </section>
 
   <footer class="footer">
     <div class="container">
@@ -312,6 +317,5 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
-  
 </body>
 </html>
