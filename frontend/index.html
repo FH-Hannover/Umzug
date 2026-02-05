@@ -120,29 +120,32 @@
   </section>
 
   <!-- ABLAUF -->
-  <section class="section section-theme-mid" id="ablauf">
-    <div class="container">
-      <div class="section-head">
-        <h2 class="h2">Ablauf</h2>
-        <p class="section-sub">In 3 Schritten zum transparenten, unverbindlichen Angebot.</p>
-      </div>
-
-      <div class="grid-3">
-        <div class="card">
-          <h3>1. Anfrage</h3>
-          <p>Formular ausfüllen – dauert nur wenige Minuten.</p>
-        </div>
-        <div class="card">
-          <h3>2. Rückfragen</h3>
-          <p>Wir klären Details und stimmen den Termin ab.</p>
-        </div>
-        <div class="card">
-          <h3>3. Angebot</h3>
-          <p>Du erhältst deinen unverbindlichen Kostenvoranschlag.</p>
-        </div>
+  <div class="timeline">
+    <div class="t-step">
+      <div class="t-marker"><div class="t-num">1</div></div>
+      <div class="t-card">
+        <h3>Anfrage</h3>
+        <p>Formular ausfüllen – dauert nur wenige Minuten. Je genauer die Angaben, desto genauer das Angebot.</p>
       </div>
     </div>
-  </section>
+
+    <div class="t-step">
+      <div class="t-marker"><div class="t-num">2</div></div>
+      <div class="t-card">
+        <h3>Rückfragen</h3>
+        <p>Wir klären offene Details (z. B. Termin, Stockwerke, Besonderheiten) und planen den Ablauf.</p>
+      </div>
+    </div>
+
+    <div class="t-step">
+      <div class="t-marker"><div class="t-num">3</div></div>
+      <div class="t-card">
+        <h3>Angebot</h3>
+        <p>Du erhältst deinen unverbindlichen Kostenvoranschlag – transparent, nachvollziehbar und schnell.</p>
+      </div>
+    </div>
+  </div>
+
 
   <!-- ANGEBOT -->
   <section class="section section-theme-soft" id="angebot">
@@ -153,105 +156,158 @@
       </div>
 
       <div class="card">
-        <form id="quoteForm" class="form">
-          <!-- Kontakt -->
-          <div class="form-row">
-            <div class="field">
-              <label for="fullName">Name *</label>
-              <input id="fullName" class="input" name="fullName" autocomplete="name" required />
+        <form id="quoteForm" class="form form-premium">
+          <!-- Stepper -->
+          <div class="form-steps" aria-label="Formular Schritte">
+            <div class="step is-active">
+              <span class="step-dot">1</span>
+              <div class="step-text">
+                <strong>Kontakt</strong>
+                <small>Wer fragt an?</small>
+              </div>
             </div>
-
-            <div class="field">
-              <label for="email">E-Mail *</label>
-              <input id="email" class="input" type="email" name="email" autocomplete="email" required />
+            <div class="step">
+              <span class="step-dot">2</span>
+              <div class="step-text">
+                <strong>Adressen</strong>
+                <small>Von → Nach</small>
+              </div>
             </div>
-          </div>
-
-          <div class="form-row">
-            <div class="field">
-              <label for="phone">Telefon (optional)</label>
-              <input id="phone" class="input" name="phone" autocomplete="tel" />
+            <div class="step">
+              <span class="step-dot">3</span>
+              <div class="step-text">
+                <strong>Details</strong>
+                <small>Zimmer &amp; Stockwerk</small>
+              </div>
             </div>
-
-            <div class="field">
-              <label for="moveDate">Umzugsdatum (optional)</label>
-              <input id="moveDate" class="input" type="date" name="moveDate" />
-            </div>
-          </div>
-
-          <!-- Adressen -->
-          <div class="form-row">
-            <div class="field">
-              <label for="fromAddress">Von Adresse *</label>
-              <input id="fromAddress" class="input" name="fromAddress" autocomplete="street-address" required />
-            </div>
-
-            <div class="field">
-              <label for="toAddress">Nach Adresse *</label>
-              <input id="toAddress" class="input" name="toAddress" autocomplete="street-address" required />
+            <div class="step">
+              <span class="step-dot">4</span>
+              <div class="step-text">
+                <strong>Extras</strong>
+                <small>Lift &amp; Service</small>
+              </div>
             </div>
           </div>
 
-          <!-- Eckdaten -->
-          <div class="form-row">
-            <div class="field">
-              <label for="rooms">Zimmer *</label>
-              <input id="rooms" class="input" type="number" name="rooms" min="1" value="2" required />
+          <!-- Abschnitt: Kontakt -->
+          <fieldset class="form-section">
+            <legend>Kontakt</legend>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="fullName">Name <span class="req">*</span></label>
+                <input id="fullName" class="input" name="fullName" autocomplete="name" required />
+              </div>
+
+              <div class="field">
+                <label for="email">E-Mail <span class="req">*</span></label>
+                <input id="email" class="input" type="email" name="email" autocomplete="email" required />
+              </div>
             </div>
 
-            <div class="field">
-              <label for="livingAreaM2">Wohnfläche (m²) optional</label>
-              <input id="livingAreaM2" class="input" type="number" name="livingAreaM2" min="0" />
+            <div class="form-row">
+              <div class="field">
+                <label for="phone">Telefon <span class="hint">(optional)</span></label>
+                <input id="phone" class="input" name="phone" autocomplete="tel" />
+              </div>
+
+              <div class="field">
+                <label for="moveDate">Umzugsdatum <span class="hint">(optional)</span></label>
+                <input id="moveDate" class="input" type="date" name="moveDate" />
+              </div>
             </div>
-          </div>
+          </fieldset>
 
-          <div class="form-row">
-            <div class="field">
-              <label for="floorFrom">Stockwerk (von) optional</label>
-              <input id="floorFrom" class="input" type="number" name="floorFrom" />
+          <!-- Abschnitt: Adressen -->
+          <fieldset class="form-section">
+            <legend>Adressen</legend>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="fromAddress">Von Adresse <span class="req">*</span></label>
+                <input id="fromAddress" class="input" name="fromAddress" autocomplete="street-address" required />
+              </div>
+
+              <div class="field">
+                <label for="toAddress">Nach Adresse <span class="req">*</span></label>
+                <input id="toAddress" class="input" name="toAddress" autocomplete="street-address" required />
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Abschnitt: Eckdaten -->
+          <fieldset class="form-section">
+            <legend>Eckdaten</legend>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="rooms">Zimmer <span class="req">*</span></label>
+                <input id="rooms" class="input" type="number" name="rooms" min="1" value="2" required />
+              </div>
+
+              <div class="field">
+                <label for="livingAreaM2">Wohnfläche (m²) <span class="hint">(optional)</span></label>
+                <input id="livingAreaM2" class="input" type="number" name="livingAreaM2" min="0" />
+              </div>
             </div>
 
-            <div class="field">
-              <label for="floorTo">Stockwerk (nach) optional</label>
-              <input id="floorTo" class="input" type="number" name="floorTo" />
+            <div class="form-row">
+              <div class="field">
+                <label for="floorFrom">Stockwerk (von) <span class="hint">(optional)</span></label>
+                <input id="floorFrom" class="input" type="number" name="floorFrom" />
+              </div>
+
+              <div class="field">
+                <label for="floorTo">Stockwerk (nach) <span class="hint">(optional)</span></label>
+                <input id="floorTo" class="input" type="number" name="floorTo" />
+              </div>
             </div>
+          </fieldset>
+
+          <!-- Abschnitt: Extras -->
+          <fieldset class="form-section">
+            <legend>Zusatzleistungen</legend>
+
+            <div class="options options-premium">
+              <label class="check">
+                <input type="checkbox" name="elevatorFrom" />
+                <span>Lift vorhanden (von)</span>
+              </label>
+
+              <label class="check">
+                <input type="checkbox" name="elevatorTo" />
+                <span>Lift vorhanden (nach)</span>
+              </label>
+
+              <label class="check">
+                <input type="checkbox" name="packingHelp" />
+                <span>Einpackservice gewünscht</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- Abschnitt: Notizen -->
+          <fieldset class="form-section">
+            <legend>Notizen</legend>
+
+            <div class="field">
+              <label for="notes">Hinweise <span class="hint">(optional)</span></label>
+              <textarea
+                id="notes"
+                class="input textarea"
+                name="notes"
+                placeholder="z. B. schwere Möbel, Klavier, Halteverbot, etc."></textarea>
+            </div>
+          </fieldset>
+
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit">Kostenloses Angebot anfordern</button>
+            <p class="form-note">🔒 Unverbindlich &amp; DSGVO-konform – deine Daten werden nicht weitergegeben.</p>
           </div>
-
-          <!-- Optionen -->
-          <div class="options">
-            <label class="check">
-              <input type="checkbox" name="elevatorFrom" />
-              <span>Lift vorhanden (von)</span>
-            </label>
-
-            <label class="check">
-              <input type="checkbox" name="elevatorTo" />
-              <span>Lift vorhanden (nach)</span>
-            </label>
-
-            <label class="check">
-              <input type="checkbox" name="packingHelp" />
-              <span>Einpackservice gewünscht</span>
-            </label>
-          </div>
-
-          <!-- Notizen -->
-          <div class="field">
-            <label for="notes">Notizen (optional)</label>
-            <textarea
-              id="notes"
-              class="input"
-              name="notes"
-              placeholder="z. B. schwere Möbel, Klavier, Halteverbot, etc."
-              style="min-height:110px;"></textarea>
-          </div>
-
-          <button class="btn btn-primary" type="submit">Kostenloses Angebot anfordern</button>
-
-          <p class="form-note">🔒 Unverbindlich &amp; DSGVO-konform – deine Daten werden nicht weitergegeben.</p>
 
           <p id="result" class="result"></p>
         </form>
+
       </div>
     </div>
   </section>
